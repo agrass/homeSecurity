@@ -1,0 +1,21 @@
+<%= form_for(@ip_config) do |f| %>
+  <% if @ip_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ip_config.errors.count, "error") %> prohibited this ip_config from being saved:</h2>
+
+      <ul>
+      <% @ip_config.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ip %><br />
+    <%= f.text_field :ip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
