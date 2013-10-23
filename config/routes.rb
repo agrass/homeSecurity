@@ -1,7 +1,7 @@
 HomeSecurity::Application.routes.draw do
   resources :ip_configs
   get "lastIP", :to => "ip_configs#lastIP"
-  post "sendIP", :to => "ip_configs#sendIP"
+  get "sendIP", :to => "ip_configs#sendIP"
 
 
   # The priority is based upon order of creation:
