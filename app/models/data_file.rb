@@ -1,8 +1,7 @@
-class DataFile < ActiveRecord::Base
+class DataFile < ActiveRecord::Baseg
   attr_accessible :filename
 
-  def self.save(upload)
-    puts params
+  def self.save(upload)    
     name =  upload['image'].original_filename    
     directory = "public/images"
     # create directory if it doesn't exist

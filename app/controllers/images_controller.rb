@@ -9,8 +9,8 @@ class ImagesController < ApplicationController
 	end
 
 	def uploadFile
-		request.host
-
+		#request.host
+		puts params
 		post = DataFile.save(params)
 		render :text => "File has been uploaded successfully"
 	end
