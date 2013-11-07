@@ -3,6 +3,8 @@ HomeSecurity::Application.routes.draw do
   get "lastIP", :to => "ip_configs#lastIP"
   get "sendIP", :to => "ip_configs#sendIP"
 
+  post "uploadFile", :to => "images#uploadFile"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
