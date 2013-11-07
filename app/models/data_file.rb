@@ -10,7 +10,6 @@ class DataFile < ActiveRecord::Baseg
     path = File.join(directory, name)
     # write the file
     File.open(path, "wb") { |f| f.write(upload['image'].read) }
-
     DataFile.create(:filename => name)
   end
 end
