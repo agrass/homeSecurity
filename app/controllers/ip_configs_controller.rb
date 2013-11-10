@@ -15,12 +15,14 @@ class IpConfigsController < ApplicationController
       render json: { ip: @ip  }
   end
   def sendIP
-    @new_ip = IpConfig.new(:ip => params[:ip])
-    if @new_ip.save
-      render json: { added: true}
-    else
-      render json: { added: false}
+    @new_ip = IpConfig.last.ip
+    if @new_ip != params[:ip]
+      @new_ip = IpConfig.new(:ip => params[:ip])    
+      if !@new_ip.save       
+        render json: { added: false}
+      end
     end
+    render json: { added: true}
   end
 
 

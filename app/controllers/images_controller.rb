@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ImagesController < ApplicationController
 	def index
 		#@files = DataFile.
