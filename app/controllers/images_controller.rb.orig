@@ -1,0 +1,22 @@
+# encoding: utf-8
+class ImagesController < ApplicationController
+	def index
+		#@files = DataFile.
+
+	    #respond_to do |format|
+	    #  format.html # index.html.erb
+	    #  format.json { render json: @ip_configs }
+	    #end
+	end
+
+	def uploadFile
+<<<<<<< HEAD
+=======
+		request.host
+		puts "holaa: "
+		puts params			
+>>>>>>> cbfeeb7e2f4fa8f7bf03519425c2df084352cd52
+		post = DataFile.save(params)
+		render :text => "File has been uploaded successfully"
+	end
+end

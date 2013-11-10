@@ -1,12 +1,11 @@
 # encoding: utf-8
 class ImagesController < ApplicationController
 	def index
-		#@files = DataFile.
-
-	    #respond_to do |format|
-	    #  format.html # index.html.erb
-	    #  format.json { render json: @ip_configs }
-	    #end
+		@images = DataFile.order("created_at DESC").limit(5)
+	    respond_to do |format|
+	      format.html # index.html.erb
+	      format.json { render json: @images }
+	    end
 	end
 
 	def uploadFile

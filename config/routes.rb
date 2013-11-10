@@ -7,6 +7,7 @@ HomeSecurity::Application.routes.draw do
   get "getGasArray", :to => "gas_sense#getValueArray"
 
   post "uploadFile", :to => "images#uploadFile"
+  get "images(.:format)", :to => "images#index"
 
 
   # The priority is based upon order of creation:
