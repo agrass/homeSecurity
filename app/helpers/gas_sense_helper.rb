@@ -1,0 +1,2 @@
+module GasSenseHelper
+end

@@ -2,6 +2,9 @@ HomeSecurity::Application.routes.draw do
   resources :ip_configs
   get "lastIP", :to => "ip_configs#lastIP"
   get "sendIP", :to => "ip_configs#sendIP"
+  post "sendGas", :to => "gas_sense#sendValue"
+  get "getGas", :to => "gas_sense#getValue"
+  get "getGasArray", :to => "gas_sense#getValueArray"
 
   post "uploadFile", :to => "images#uploadFile"
 

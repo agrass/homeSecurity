@@ -1,15 +1,16 @@
-class DataFile < ActiveRecord::Baseg
+class DataFile < ActiveRecord::Base
   attr_accessible :filename
 
   def self.save(upload)    
-    name =  upload['image'].original_filename    
+    name =  upload["filename"] 
     directory = "public/images"
     # create directory if it doesn't exist
   	Dir.mkdir("public/images") unless File.exists?("public/images")
     # create the file path
     path = File.join(directory, name)
-    # write the file
-    File.open(path, "wb") { |f| f.write(upload['image'].read) }
+    # write the file   
+    File.binwrite(path, upload["file"])
+    #File.open(path, "wb") { |f| f.write(upload.read) }
     DataFile.create(:filename => name)
   end
 end

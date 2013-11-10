@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ImagesController < ApplicationController
 	def index
 		#@files = DataFile.
@@ -10,7 +11,8 @@ class ImagesController < ApplicationController
 
 	def uploadFile
 		request.host
-		#puts params
+		puts "holaa: "
+		puts params			
 		post = DataFile.save(params)
 		render :text => "File has been uploaded successfully"
 	end

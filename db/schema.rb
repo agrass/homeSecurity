@@ -11,10 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106194137) do
+ActiveRecord::Schema.define(:version => 20131109222849) do
 
   create_table "data_files", :force => true do |t|
     t.string   "filename"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "gas_senses", :force => true do |t|
+    t.float    "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -23,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20131106194137) do
     t.string   "ip"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.integer  "tipo"
+    t.integer  "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "verify"
   end
 
 end
