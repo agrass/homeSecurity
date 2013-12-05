@@ -1,0 +1,2 @@
+module PushConfigHelper
+end

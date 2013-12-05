@@ -5,6 +5,8 @@ HomeSecurity::Application.routes.draw do
   post "sendGas", :to => "gas_sense#sendValue"
   get "getGas", :to => "gas_sense#getValue"
   get "getGasArray", :to => "gas_sense#getValueArray"
+  post "new_device", :to => "push_config#new_device"
+  post "remove_device", :to => "push_config#remove_device"
 
   post "uploadFile", :to => "images#uploadFile"
   get "images(.:format)", :to => "images#index"

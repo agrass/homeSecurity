@@ -1,5 +1,5 @@
 class DataFile < ActiveRecord::Base
-  attr_accessible :filename
+  attr_accessible :filename, :tipo
 
   def self.save(upload)    
     name =  upload["filename"] 
@@ -11,6 +11,7 @@ class DataFile < ActiveRecord::Base
     # write the file   
     File.binwrite(path, upload["file"])
     #File.open(path, "wb") { |f| f.write(upload.read) }
-    DataFile.create(:filename => name)
+    DataFile.create(:filename => name, :tipo => upload["type"])
+    IpConfig.sendAlert
   end
 end

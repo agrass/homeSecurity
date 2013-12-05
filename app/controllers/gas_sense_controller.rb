@@ -20,6 +20,6 @@ class GasSenseController < ApplicationController
     end
   end
   def getValueArray
-    render json: GasSense.find(:all, :order => "id desc", :limit => 5, :select => "value").to_json
+    render json: GasSense.find(:all, :order => "id desc", :limit => 10, :select => "value").to_json
   end
 end
