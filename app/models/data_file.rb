@@ -9,7 +9,7 @@ class DataFile < ActiveRecord::Base
     # create the file path
     path = File.join(directory, name)
     # write the file   
-    File.binwrite(path, upload["file"])
+    IO.binwrite(path, upload["file"])
     #File.open(path, "wb") { |f| f.write(upload.read) }
     DataFile.create(:filename => name, :tipo => upload["type"])
     IpConfig.sendAlert("Hay movimiento un tu hogar, hay una nueva foto!", 1)
