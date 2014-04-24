@@ -1,5 +1,6 @@
 class DataFile < ActiveRecord::Base
   attr_accessible :filename, :tipo
+  require 'io/console'
 
   def self.save(upload)    
     name =  upload["filename"] 
