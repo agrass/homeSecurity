@@ -1,6 +1,9 @@
 class GasSenseController < ApplicationController
   def sendValue
     data = GasSense.new(:value => params[:gas])
+    if params[:gas].to_f > 2.5
+      IpConfig.sendAlert("Niveles peligrosos en la calidad de aire de su Hogar!", 1)
+    end
     if data.save
       render json: { created: true}
     else
@@ -16,7 +19,7 @@ class GasSenseController < ApplicationController
     if data != nil
       render json: { value: data.value}
     else
-      render json: { value: nil}
+      render json: { value: nil }
     end
   end
   def getValueArray

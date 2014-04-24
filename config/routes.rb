@@ -1,4 +1,10 @@
 HomeSecurity::Application.routes.draw do
+  resources :users
+
+
+  resources :devices
+
+
   resources :ip_configs
   get "lastIP", :to => "ip_configs#lastIP"
   get "sendIP", :to => "ip_configs#sendIP"
@@ -10,6 +16,9 @@ HomeSecurity::Application.routes.draw do
 
   post "uploadFile", :to => "images#uploadFile"
   get "images(.:format)", :to => "images#index"
+  post "sendMovement", :to =>  "devices#sendMovement"
+  get "getLastLog", :to => "devices#getLastLog"
+  post "addFriend", :to => "users#addFriend"
 
 
   # The priority is based upon order of creation:

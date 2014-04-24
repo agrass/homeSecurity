@@ -25,8 +25,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'gcm_on_rails'
-#gem "httparty", "~> 0.12.0"
+#gem 'gcm_on_rails'
+gem "httparty", "~> 0.12.0"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
